@@ -1,0 +1,44 @@
+{
+  "name": "kitslex",
+  "version": "1.0.0",
+  "private": "true",
+  "author": "Nelly Martin",
+  "license": "MIT",
+  "dependencies": {
+    "@contentful/rich-text-html-renderer": "^15.12.1",
+    "@hot-loader/react-dom": "^17.0.2",
+    "@prismicio/client": "^6.6.4",
+    "@prismicio/react": "^2.4.4",
+    "contentful": "^9.1.22",
+    "cssnano": "^5.1.12",
+    "lodash": "^4.17.21",
+    "postcss-loader": "^7.0.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-hot-loader": "^4.13.0",
+    "react-redux": "^8.0.0",
+    "redux": "^4.2.0",
+    "sass-loader": "^13.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-react-jsx": "^7.17.3",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.4",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "sass": "^1.54.3",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open --hot --mode development",
+    "build": "webpack"
+  }
+}

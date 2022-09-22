@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+.app {
+  @media only screen and (min-width: 1180px) {
+    background-image: url("./assets/Planks@Desktop.png");
+  }
+  overflow: auto;
+  font-family: 'IM Fell Great Primer', serif;
+}
+
+.heading {
+  @media only screen and (min-width: 1180px) {
+    font-size: 96px;
+    line-height: 118px;
+    margin-bottom: 50px;
+  }
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 40px;
+  line-height: 49px;
+  margin-bottom: 25px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.accueil {
+  @media only screen and (min-width: 1180px) {
+    font-size: 24px;
+    line-height: 150%;
+    margin: 50px auto;
+    width: 900px;
+  }
+  font-size: 16px;
+  line-height: 150%;
+  margin: 25px auto 50px auto;
+  width: 340px;
+}
+
+.page {
+  @media only screen and (min-width: 1180px) {
+    border: 60px solid;
+    border-image: url("./assets/Paper@Desktop.png") 60 fill round;
+    margin: 0 auto 30px auto;
+    width: 1160px;
+  }
+  background-image: url("./assets/Paper@Mobile.png");
+}
+
+.church {
+  @media only screen and (min-width: 1180px) {
+    height: 500px;
+  }
+  @media only screen and (max-width: 1180px) {
+    > img {
+      width: 340px;
+    }
+  }
+  display: table;
+  margin: 50px auto;
+  figcaption {
+    text-align: center;
+    @media only screen and (max-width: 360px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.full-width-image {
+  display: block;
+  margin: 0 -70px;
+}
+.dragon {
+  @media only screen and (min-width: 1180px) {
+    margin-bottom: -90px;
+  }
+  @media only screen and (max-width: 1180px) {
+    margin: 0 auto;
+  }
+}
