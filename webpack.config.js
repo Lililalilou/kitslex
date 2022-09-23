@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
+require('dotenv').config({ path: './.env' })
 
 const config = {
   mode: 'development',
@@ -34,7 +35,12 @@ const config = {
   devServer: {
     static: './dist',
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env),
+    }),
+  ],
   devtool: 'eval-source-map',
 }
 

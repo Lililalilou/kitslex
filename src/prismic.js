@@ -1,11 +1,11 @@
 import * as prismic from '@prismicio/client'
 
+const prismicToken = process.env.REACT_APP_PRISMIC_ACCESS_TOKEN
 // Fill in your repository name
 export const repositoryName = 'kitslex'
-
 export const client = prismic.createClient(repositoryName, {
   // If your repository is private, add an access token
-  accessToken: 'process.env.PRISMIC_APP_ACCESS_TOKEN',
+  accessToken: prismicToken,
 
   // This defines how you will structure URL paths in your project.
   // Update the types to match the Custom Types in your project, and edit
