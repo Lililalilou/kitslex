@@ -1,23 +1,14 @@
 import title from '../assets/Title.png'
+import elise from '../assets/elise.jpg'
+import alex from '../assets/alex.jpg'
 import characters from '../assets/Characters@Desktop.png'
-import { useEffect } from 'react'
 import mobCharacters from '../assets/Characters@Mobile.png'
 import dice from '../assets/Dice@Desktop.png'
 import mobDice from '../assets/Dice@Mobile.png'
 
 import './Header.scss'
 
-// const { innerWidth } = window
-// let currentInnerWidth
-// const getInnerWidth = () => {
-//   console.log(innerWidth)
-//   return currentInnerWidth === innerWidth
-// }
-
 const Header = () => {
-  // useEffect(() => {
-  //   getInnerWidth()
-  // }, [currentInnerWidth])
   return (
     <div className="header">
       <img src={title} className="header__title" />
@@ -44,7 +35,9 @@ const Header = () => {
             <div>Élise</div>
             <div>Dormeuse</div>
           </div>
-          <img src="http://placekitten.com/88/104" alt="" />
+          <div className="sheet__portrait">
+            <img src={elise} alt="Élise qui fait dodo sur Mans" />
+          </div>
         </div>
         <div className="and">&</div>
         <div className="sheet">
@@ -56,17 +49,12 @@ const Header = () => {
             <div>Alexandre</div>
             <div>Mangeur</div>
           </div>
-          <img src="http://placekitten.com/88/104" alt="" />
+          <div className="sheet__portrait">
+            <img src={alex} alt="Alex qui croque dans un jambon" />
+          </div>
         </div>
       </div>
       <div className="header__event">
-        {/* <img
-          srcSet={`${mobDice} 720w, ${dice} 1184w`}
-          sizes="(max-width: 360px) 360px, 1180px"
-          src={mobDice}
-          alt=""
-          className="header__dice"
-        ></img> */}
         <picture>
           <source
             srcSet={`${dice} 1184w`}

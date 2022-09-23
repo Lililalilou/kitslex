@@ -27,7 +27,7 @@
 .accueil {
   @media only screen and (min-width: 1180px) {
     font-size: 24px;
-    line-height: 150%;
+    line-height: 2em;
     margin: 50px auto;
     width: 900px;
   }
@@ -44,14 +44,16 @@
     margin: 0 auto 30px auto;
     width: 1160px;
   }
-  background-image: url("./assets/Paper@Mobile.png");
+  @media only screen and (max-width: 1179px) {
+    background-image: url("./assets/Paper@Mobile.png");
+  }
 }
 
 .church {
   @media only screen and (min-width: 1180px) {
     height: 500px;
   }
-  @media only screen and (max-width: 1180px) {
+  @media only screen and (max-width: 1179px) {
     > img {
       width: 340px;
     }
@@ -74,7 +76,7 @@
   @media only screen and (min-width: 1180px) {
     margin-bottom: -90px;
   }
-  @media only screen and (max-width: 1180px) {
+  @media only screen and (max-width: 1179px) {
     margin: 0 auto;
   }
 }

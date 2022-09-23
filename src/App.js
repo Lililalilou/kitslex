@@ -10,7 +10,6 @@ import './app.scss'
 
 import Header from './components/Header'
 import PostsList from './components/PostsList'
-// import Pictures from './components/Pictures'
 
 export const App = hot(_App)
 export function _App() {
