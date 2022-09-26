@@ -39,8 +39,8 @@ const PostsList = () => {
           sizes="1180px"
         />
         <img
-          srcSet={`${mobPencil} 720w`}
-          sizes="(max-width: 679px) 100vw"
+          srcSet={`${mobPencil} ${variables.mobileWidth}w`}
+          sizes={`(max-width: ${variables.mobileWidth - 1}px) 100vw`}
           alt=""
           className={`${!isMobile ? 'full-width-image' : ''} pencil`}
         />
