@@ -1,3 +1,5 @@
+import variables from '../variables.json'
+
 import title from '../assets/Title.png'
 import elise from '../assets/Elise.png'
 import alex from '../assets/Alex.png'
@@ -15,12 +17,12 @@ const Header = () => {
       <picture>
         <source
           srcSet={`${characters} 1180w`}
-          media="(min-width: 680px)"
-          sizes="(max-width: 1180px) 100vw, 1180px"
+          media={`(min-width: ${variables.mobileWidth}px)`}
+          sizes="1180px"
         />
         <img
-          srcSet={`${mobCharacters} 720w`}
-          sizes="(max-width: 679px) 100vw"
+          srcSet={`${mobCharacters} ${variables.mobileWidth}w`}
+          sizes={`(max-width: ${variables.mobileWidth - 1}px) 100vw`}
           alt=""
           className="header__characters"
         />
@@ -58,12 +60,12 @@ const Header = () => {
         <picture>
           <source
             srcSet={`${dice} 1184w`}
-            media="(min-width: 680px)"
-            sizes="(max-width: 1180px) 100vw, 1180px"
+            media={`(min-width: ${variables.mobileWidth}px)`}
+            sizes="1180px"
           />
           <img
-            srcSet={`${mobDice} 720w`}
-            sizes="(max-width: 679px) 100vw"
+            srcSet={`${mobDice} ${variables.mobileWidth}w`}
+            sizes={`(max-width: ${variables.mobileWidth - 1}px) 360px`}
             alt=""
             className="header__dice"
           />

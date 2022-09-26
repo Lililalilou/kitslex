@@ -3,6 +3,8 @@ import { hot } from 'react-hot-loader/root'
 import { useSinglePrismicDocument } from '@prismicio/react'
 import { PrismicRichText } from '@prismicio/react'
 
+import variables from './variables.json'
+
 import church from './assets/Church@Desktop.png'
 import dragon from './assets/Dragon@Desktop.png'
 import mobDragon from './assets/Dragon@Mobile.png'
@@ -19,7 +21,7 @@ export function _App() {
       <div className="page">
         <Header />
         <h2 className="heading">Accueil</h2>
-        <div className="accueil" height={300}>
+        <div className="home" height={300}>
           {accueil && <PrismicRichText field={accueil.data.main} />}
         </div>
         <PostsList />
@@ -30,13 +32,19 @@ export function _App() {
               Jet de volonté : 1d20, le résultat doit être supérieur à 1.
             </figcaption>
           </figure>
-          <img
-            srcSet={`${mobDragon} 720w, ${dragon} 1180w`}
-            sizes="(max-width: 360px) 360px, 1180px"
-            src={dragon}
-            alt=""
-            className="full-width-image dragon"
-          ></img>
+          <picture>
+            <source
+              srcSet={`${dragon} 1180w`}
+              media={`(min-width: ${variables.mobileWidth}px)`}
+              sizes="1180px"
+            />
+            <img
+              srcSet={`${mobDragon} 720w`}
+              sizes={`(max-width: ${variables.mobileWidth - 1}px) 100vw`}
+              alt=""
+              className="full-width-image dragon"
+            />
+          </picture>
         </div>
       </div>
     </div>

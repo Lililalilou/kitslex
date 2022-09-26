@@ -1,50 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import "./variables";
+
+a, a:hover, a:visited {
+  color: #0047B1;
+  text-decoration: underline;
+}
 
 .app {
-  @media only screen and (min-width: 1180px) {
-    background-image: url("./assets/Planks@Desktop.png");
-  }
+  background-image: url("./assets/Planks@Desktop.png");
   overflow: auto;
   font-family: 'IM Fell Great Primer', serif;
+  @include is-mobile {
+    background: none;
+  }
 }
 
 .heading {
-  @media only screen and (min-width: 1180px) {
-    font-size: 96px;
-    line-height: 118px;
-    margin-bottom: 50px;
-  }
+  font-size: 96px;
+  line-height: 118px;
+  margin-bottom: 50px;
   font-family: 'Fredericka the Great', cursive;
-  font-size: 40px;
-  line-height: 49px;
-  margin-bottom: 25px;
   margin-top: 50px;
   text-align: center;
+  @include is-mobile {
+    font-size: 40px;
+    line-height: 49px;
+    margin-bottom: 25px;
+  }
 }
 
-.accueil {
-  @media only screen and (min-width: 1180px) {
-    font-size: 24px;
-    line-height: 2em;
-    margin: 50px auto;
-    width: 900px;
+.home {
+  font-size: 24px;
+  line-height: 36px;
+  margin: 50px auto;
+  width: 900px;
+  @include is-mobile {
+    width: auto;
+    // font-size: 16px;
+    line-height: 150%;
+    margin: 25px 10px 50px 10px;
   }
-  font-size: 16px;
-  line-height: 150%;
-  margin: 25px auto 50px auto;
-  width: 340px;
 }
 
 .page {
-  @media only screen and (min-width: 1180px) {
+  @include is-desktop {
     border: 60px solid;
     border-image: url("./assets/Paper@Desktop.png") 60 fill round;
     margin: 0 auto 30px auto;
     width: 1160px;
   }
-  @media only screen and (max-width: 1179px) {
+  @include is-mobile {
     background-image: url("./assets/Paper@Mobile.png");
   }
 }
@@ -73,10 +80,8 @@
   margin: 0 -70px;
 }
 .dragon {
-  @media only screen and (min-width: 1180px) {
-    margin-bottom: -90px;
-  }
-  @media only screen and (max-width: 1179px) {
+  margin-bottom: -90px;
+  @include is-mobile {
     margin: 0 auto;
   }
 }

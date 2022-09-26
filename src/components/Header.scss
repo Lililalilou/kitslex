@@ -1,21 +1,17 @@
+@import "../_variables.scss";
+
 .header {
-  @media only screen and (min-width: 1180px) {
-    margin-top: 60px;
-  }
-  @media only screen and (max-width: 1179px) {
+  margin-top: 60px;
+  @include is-mobile {
+    margin-top: 0;
     padding-top: 15vw;
-  }
-  @media only screen and (max-width: 679px) {
-    padding-top: 30vw;
   }
   position: relative;
   &__title {
     display: block;
     margin: 0 auto;
-    @media only screen and (max-width: 1179px) {
-      width: 70%;
-    }
-    @media only screen and (max-width: 679px) {
+    @include is-mobile {
+      margin-top: 15vw;
       width: 100%;
     }
   }
@@ -23,7 +19,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    @media only screen and (min-width: 1180px) {
+    @include is-desktop {
       transform: translate(-70px, -90px);
     }
   }
@@ -32,28 +28,31 @@
     &::before, &::after {
       color: #0047B1;
       font-family: 'Covered By Your Grace', cursive;
-      font-size: 24px;
-      line-height: 32px;
+      font-size: 40px;
+      line-height: 54px;
       position: absolute;
       left: 50%;
       top: 50%;
-      @media only screen and (min-width: 1180px) {
-        font-size: 40px;
-        line-height: 54px;
+      @include is-mobile {
+        font-size: 24px;
+        line-height: 32px;
       }
+    }
+    @include is-mobile {
+      transform: width(20px);
     }
     &::before {
       content: "Le";
-      transform: rotate(-4.84deg) translate(-90px, -25px);
-      @media only screen and (min-width: 1180px) {
-        transform: rotate(-4.84deg) translate(-180px, -50px);
+      transform: rotate(-4.84deg) translate(-180px, -50px);
+      @include is-mobile {
+        transform: rotate(-4.84deg) translate(-90px, -25px);
       }
     }
     &::after {
       content: "février";
-      transform: rotate(-4.84deg) translate(72px, -10px);
-      @media only screen and (min-width: 1180px) {
-        transform: rotate(-4.84deg) translate(130px, -10px);
+      transform: rotate(-4.84deg) translate(130px, -10px);
+      @include is-mobile {
+        transform: rotate(-4.84deg) translate(72px, -10px);
       }
     }
   }
@@ -62,32 +61,35 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(57px, -30px);
-    width: 32px;
-    height: 20px;
-    @media only screen and (min-width: 1180px) {
-      transform: translate(110px, -40px);
-      width: 50px;
-      height: 30px;
+    transform: translate(110px, -40px);
+    width: 50px;
+    height: 30px;
+    @include is-mobile {
+      transform: translate(57px, -30px);
+      width: 32px;
+      height: 20px;
     }
   }
   &__dice {
     display: block;
-    @media only screen and (min-width: 1180px) {
+    @include is-desktop {
       margin-left: -70px;
+    }
+    @include is-mobile {
+      margin: 0 auto;
     }
   }
   &__heros {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 15px;
-    margin-bottom: 25px;
-    @media only screen and (min-width: 768px) {
-      flex-direction: row;
-      margin-top: 35px;
-      margin-bottom: 45px;
+    flex-direction: row;
+    margin-top: 35px;
+    margin-bottom: 45px;
+    @include is-mobile {
+      flex-direction: column;
+      margin-top: 15px;
+      margin-bottom: 25px;
     }
   }
   .sheet {
@@ -141,10 +143,8 @@
     font-family: 'Fredericka the Great', cursive;
     font-size: 48px;
     line-height: 59px;
-    @media only screen and (min-width: 768px) {
-      margin: 0 20px;
-    }
-    @media only screen and (min-width: 940px) {
+    margin: 0 20px;
+    @include is-mobile {
       font-size: 64px;
       line-height: 78px;
       margin: 0 40px;
