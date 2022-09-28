@@ -16,6 +16,7 @@ import PostsList from './components/PostsList'
 export const App = hot(_App)
 export function _App() {
   const [accueil] = useSinglePrismicDocument('accueil')
+  const [remerciements] = useSinglePrismicDocument('remerciements')
   return (
     <div className="app">
       <div className="page">
@@ -25,6 +26,10 @@ export function _App() {
           {accueil && <PrismicRichText field={accueil.data.main} />}
         </div>
         <PostsList />
+        <h2 className="heading">Remerciements</h2>
+        <div className="home" height={300}>
+          {remerciements && <PrismicRichText field={remerciements.data.main} />}
+        </div>
         <div className="footer">
           <figure className="church">
             <img src={church} />
