@@ -25,6 +25,11 @@ let isMobile
 
 const PostsList = () => {
   const [posts] = useAllPrismicDocumentsByType('blog_post')
+  const sortedPostsByDate =
+    posts &&
+    posts.sort((a, b) => {
+      return new Date(b.data.date) - new Date(a.data.date)
+    })
   useEffect(() => {
     if (innerWidth < 1180) {
       isMobile = true
@@ -46,8 +51,8 @@ const PostsList = () => {
         />
       </picture>
       <h2 className="heading">Actualités</h2>
-      {posts &&
-        posts.map((post, key) => (
+      {sortedPostsByDate &&
+        sortedPostsByDate.map((post, key) => (
           <Post
             post={post}
             key={post.id}
