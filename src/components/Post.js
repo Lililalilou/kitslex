@@ -36,7 +36,7 @@ const Post = ({ post, rotation, mobileView, image }) => {
               imgixParams={{
                 auto: 'format',
                 height: '300',
-                fit: 'clamp',
+                fit: 'crop',
               }}
             />
           ))}
